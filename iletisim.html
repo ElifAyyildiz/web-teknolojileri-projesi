@@ -40,51 +40,78 @@
 
         <h1 class="mb-4">İletişim</h1>
 
-        <form action="form-sonuc.php" method="post" onsubmit="return formKontrol()">
+        <form action="form-sonuc.php" method="post" onsubmit="return formKontrol()" class="needs-validation" novalidate>
 
             <div class="mb-3">
-                <label class="form-label">Ad Soyad</label>
-                <input type="text" id="adsoyad" name="adsoyad" class="form-control">
+                <label for="adsoyad" class="form-label">Ad Soyad</label>
+                <input type="text" id="adsoyad" name="adsoyad" class="form-control" required>
+                <div class="invalid-feedback">
+                    Lütfen ad soyad giriniz.
+                </div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">E-posta</label>
-                <input type="email" id="email" name="email" class="form-control">
+                <label for="email" class="form-label">E-posta</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+                <div class="invalid-feedback">
+                    Geçerli bir e-posta adresi giriniz.
+                </div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Telefon</label>
-                <input type="text" id="telefon" name="telefon" class="form-control">
+                <label for="telefon" class="form-label">Telefon</label>
+                <input type="text" id="telefon" name="telefon" class="form-control" required>
+                <div class="invalid-feedback">
+                    Telefon numarası giriniz.
+                </div>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Cinsiyet</label><br>
 
-                <input type="radio" name="cinsiyet" value="Kadın"> Kadın
-                <input type="radio" name="cinsiyet" value="Erkek" class="ms-3"> Erkek
+                <input type="radio" id="kadin" name="cinsiyet" value="Kadın" required>
+                <label for="kadin">Kadın</label>
+
+                <input type="radio" id="erkek" name="cinsiyet" value="Erkek" class="ms-3" required>
+                <label for="erkek">Erkek</label>
+
+                <div class="invalid-feedback d-block">
+                    Lütfen cinsiyet seçiniz.
+                </div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Konu</label>
-                <select id="konu" name="konu" class="form-select">
+                <label for="konu" class="form-label">Konu</label>
+                <select id="konu" name="konu" class="form-select" required>
                     <option value="">Seçiniz</option>
                     <option value="Bilgi">Bilgi</option>
                     <option value="Öneri">Öneri</option>
                     <option value="Şikayet">Şikayet</option>
                 </select>
+                <div class="invalid-feedback">
+                    Lütfen konu seçiniz.
+                </div>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">İlgi Alanları</label><br>
 
-                <input type="checkbox" name="ilgiler[]" value="Web Tasarım"> Web Tasarım
-                <input type="checkbox" name="ilgiler[]" value="Yazılım" class="ms-3"> Yazılım
-                <input type="checkbox" name="ilgiler[]" value="Sinema" class="ms-3"> Sinema
+                <input type="checkbox" id="webTasarim" name="ilgiler[]" value="Web Tasarım">
+                <label for="webTasarim">Web Tasarım</label>
+
+                <input type="checkbox" id="yazilim" name="ilgiler[]" value="Yazılım" class="ms-3">
+                <label for="yazilim">Yazılım</label>
+
+                <input type="checkbox" id="sinema" name="ilgiler[]" value="Sinema" class="ms-3">
+                <label for="sinema">Sinema</label>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Mesaj</label>
-                <textarea id="mesaj" name="mesaj" class="form-control" rows="5"></textarea>
+                <label for="mesaj" class="form-label">Mesaj</label>
+                <textarea id="mesaj" name="mesaj" class="form-control" rows="5" required></textarea>
+                <div class="invalid-feedback">
+                    Lütfen mesaj giriniz.
+                </div>
             </div>
 
             <button type="submit" class="btn btn-dark">Gönder</button>
